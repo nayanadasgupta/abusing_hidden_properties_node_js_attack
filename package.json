@@ -1,0 +1,28 @@
+{
+  "name": "abusing_hidden_properties_node_js_attack",
+  "version": "1.0.0",
+  "description": "Implementation of \"Abusing Hidden Properties to Attack the Node.js Ecosystem\"",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node_modules/.bin/nodemon -e js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nayanadasgupta/abusing_hidden_properties_node_js_attack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nayanadasgupta/abusing_hidden_properties_node_js_attack/issues"
+  },
+  "homepage": "https://github.com/nayanadasgupta/abusing_hidden_properties_node_js_attack#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  }
+}
