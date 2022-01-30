@@ -30,7 +30,6 @@ function getApplicationPayload(application_id) {
 
 function deletePayload(payload) {
     return new Promise((resolve, reject) => {
-        console.log("look", payload.application_id)
         payloads = payloads.filter(p => p.application_id !== payload.application_id)
         fs.writeFile(filename, JSON.stringify(payloads), 'utf8', (err) => {
             if (err) {
