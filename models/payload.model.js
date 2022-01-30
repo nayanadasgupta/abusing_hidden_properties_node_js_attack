@@ -1,8 +1,21 @@
 const e = require('express')
 const fs = require('fs')
-const helper = require('../helpers/helper')
 const filename = '/Users/NayanaDasgupta/Documents/Computer Security II/abusing_hidden_properties_node_js_attack/data/payloads.json'
 let payloads = require(filename)
+
+function get_payload(array, application_id) {
+    return new Promise((resolve, reject) => {
+        const row = array.filter(r => r.application_id === application_id)
+        if (!row) {
+            console.log("NO ROW")
+            reject({
+                message: 'No payload exists for this application',
+                status: 404
+            })
+        }
+        resolve(row)
+    })
+} 
 
 function getAllPayloads() {
     return new Promise((resolve, reject) => {
@@ -29,28 +42,22 @@ function getApplicationPayload(application_id) {
     })
 }
 
-function deletePayload(application_id) {
+function deletePayload(payload) {
     return new Promise((resolve, reject) => {
-        helper.get_payload(payloads, application_id)
-        .then(() => {
-            console.log("payloads", payloads)
-            payloads = payloads.filter(p => p.application_id !== application_id)
-            console.log("payloads after", payloads)
-            fs.writeFile(filename, JSON.stringify(payloads), 'utf8', (err) => {
-                if (err) {
-                    console.log(err)
-                }
-            })
-            resolve()
+        payloads = payloads.filter(p => p.application_id !== payload.application_id)
+        fs.writeFile(filename, JSON.stringify(payloads), 'utf8', (err) => {
+            if (err) {
+                console.log(err)
+            }
         })
+        resolve()
         .catch(err => reject(err))
-        console.log("HHHHH")
     })
 }
 
 function storePayload(application_id, actual_payload) {
     return new Promise((resolve, _) => {
-        deletePayload(application_id)
+        deletePayload(application_id).then(() => {})
         payloads.push({...application_id, ...actual_payload})
         fs.writeFile(filename, JSON.stringify(payloads), 'utf8', (err) => {
             if (err) {

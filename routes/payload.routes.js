@@ -31,7 +31,7 @@ router.get('/:application_id', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
-    await payload_model.storePayload(req.body.application_id, req.body.actual_payload)
+    await payload_model.storePayload(req.body)
     .then(payload => res.status(201).json({
         message: `The payload for ${payload} has been stored.`,
         content: payload
