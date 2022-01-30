@@ -3,20 +3,6 @@ const fs = require('fs')
 const filename = '/Users/NayanaDasgupta/Documents/Computer Security II/abusing_hidden_properties_node_js_attack/data/payloads.json'
 let payloads = require(filename)
 
-function get_payload(array, application_id) {
-    return new Promise((resolve, reject) => {
-        const row = array.filter(r => r.application_id === application_id)
-        if (!row) {
-            console.log("NO ROW")
-            reject({
-                message: 'No payload exists for this application',
-                status: 404
-            })
-        }
-        resolve(row)
-    })
-} 
-
 function getAllPayloads() {
     return new Promise((resolve, reject) => {
         if (payloads.length === 0) {
@@ -44,6 +30,7 @@ function getApplicationPayload(application_id) {
 
 function deletePayload(payload) {
     return new Promise((resolve, reject) => {
+        console.log("look", payload.application_id)
         payloads = payloads.filter(p => p.application_id !== payload.application_id)
         fs.writeFile(filename, JSON.stringify(payloads), 'utf8', (err) => {
             if (err) {

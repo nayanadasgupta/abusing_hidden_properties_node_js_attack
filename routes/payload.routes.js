@@ -38,3 +38,16 @@ router.post('/', async (req, res) => {
     }))
     .catch(err => res.status(500).json({ message: err.message }))
 })
+
+router.delete('/:application_id', async (req, res) => {
+    await payload_model.deletePayload(req.params).then(() => {})
+    .then(payload => res.json({
+        message: `The payload for ${req.params.application_id} has been deleted`
+    }))
+    .catch(err => {
+        if (err.status) {
+            res.status(err.status).json({ message: err.message })
+        }
+        res.status(500).json({ message: err.message })
+    })
+})
