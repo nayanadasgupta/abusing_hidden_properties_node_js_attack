@@ -5,6 +5,8 @@ Implementation of Abusing Hidden Properties to Attack the Node.js Ecosystem ([Xi
 
 ## Central Payload Server API
 
+Run the payload server using `npm run dev`.
+
 Add a payload for a specific application. If a payload for the application already exists, it will be replaced by the newer application.
 
 ```
