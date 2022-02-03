@@ -1,6 +1,8 @@
 const e = require('express')
 const fs = require('fs')
-const filename = '/Users/NayanaDasgupta/Documents/Computer Security II/abusing_hidden_properties_node_js_attack/data/payloads.json'
+
+const { dirname } = require('path');
+const filename = `${dirname(require.main.filename)}/data/payloads.json`
 let payloads = require(filename)
 
 function getAllPayloads() {
