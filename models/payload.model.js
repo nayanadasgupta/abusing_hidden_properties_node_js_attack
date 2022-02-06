@@ -1,6 +1,8 @@
 const e = require('express')
 const fs = require('fs')
-const filename = `${process.cwd()}/data/payloads.json`
+
+const { dirname } = require('path');
+const filename = `${dirname(require.main.filename)}/data/payloads.json`
 let payloads = require(filename)
 
 function getAllPayloads() {
