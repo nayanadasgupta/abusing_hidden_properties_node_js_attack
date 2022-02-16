@@ -1,1 +1,1 @@
-[{"application_id":"demo_application","payload":"evil code :)"},{"application_id":"test_again","payload":"Lorem Ipsum"},{"application_id":"component_type","payload":"test","nodeType":"1"}]
+[{"application_id":"demo_application","payload":"evil code :)"},{"application_id":"test_again","payload":"Lorem Ipsum"},{"application_id":"component_type","username":"John","password":"Doe","_isBuffer":"true"}]

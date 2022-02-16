@@ -20,6 +20,7 @@
   "homepage": "https://github.com/nayanadasgupta/abusing_hidden_properties_node_js_attack#readme",
   "dependencies": {
     "express": "^4.17.2",
+    "jpv": "^2.0.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

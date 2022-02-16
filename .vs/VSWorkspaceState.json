@@ -3,9 +3,10 @@
     "",
     "\\component_type",
     "\\data",
+    "\\jpv",
     "\\models",
     "\\routes"
   ],
-  "SelectedNode": "\\data\\payloads.json",
+  "SelectedNode": "\\routes\\payload.routes.js",
   "PreviewInSolutionExplorer": false
 }

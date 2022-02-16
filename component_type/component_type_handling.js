@@ -86,22 +86,15 @@ function valOf(obj)
 }
 
 class testPollution
-{    
-    //var check =  function() {return "array"};
-    get prop3() {
-    return "array";
-     }
-     val() { return array; }
-
-    
+{        
     constructor()
     {
-        /* Object.defineProperties(this, {
+        Object.defineProperties(this, {
           [Symbol.toStringTag]: {
             value: "Array",
             writable: true
           }});
-          */
+          
           //this.check = function() {return "array"};
           //this.prototype.valueOf= 1;
         this.check = 1;
@@ -110,7 +103,10 @@ class testPollution
             return "Array"
         }
 
-        this.valueOf = function valueOf() { return ["",""]; };
+        //var check =  function() {return "array"};
+       
+
+        this.valueOf = function valueOf() { return true; };
     }     
 }
 
