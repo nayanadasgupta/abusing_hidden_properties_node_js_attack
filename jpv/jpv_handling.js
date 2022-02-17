@@ -1,22 +1,29 @@
 const express = require('express')
 const jpv = require('jpv')
 
-function checkJPV(input)
+function checkJPVMap(input)
 {
 	var mapPattern = 
 	{
 		should_be_map: new Map()
 	}
+	/*
+	Debugging info
 	console.log(typeof(mapPattern))
 	console.log(mapPattern.constructor.name);
 	console.log(input.constructor.name)
-	/*
-	var pattern = {
-		should_be_arrary: []
-	};
 	*/
 
 	return ("Validation bypassed: " + jpv.validate(input, mapPattern));
+}
+
+function checkJPVArray(input)
+{
+	var arrayPattern = {
+		should_be_arrary: []
+	};
+
+	return ("Validation bypassed: " + jpv.validate(input, arrayPattern));
 }
 
 //called with every property and its value
@@ -66,6 +73,7 @@ function exampleJPV()
 }
 
 module.exports = {
-   checkJPV,
+   checkJPVMap,
+   checkJPVArray,
    exampleJPV
 }

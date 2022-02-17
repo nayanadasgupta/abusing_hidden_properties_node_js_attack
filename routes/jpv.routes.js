@@ -5,9 +5,16 @@ const payload_model = require('../models/payload.model')
 
 module.exports = router
 
-router.post('/', async (req, res) => {
+router.post('/Map', async (req, res) => {
 
-    returnVal = await jpv_handle.checkJPV(req.body);
+    returnVal = await jpv_handle.checkJPVMap(req.body);
+    res.json(returnVal);
+    
+})
+
+router.post('/Array', async (req, res) => {
+
+    returnVal = await jpv_handle.checkJPVArray(req.body);
     res.json(returnVal);
     
 })
