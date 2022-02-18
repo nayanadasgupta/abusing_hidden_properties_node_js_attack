@@ -1,48 +1,16 @@
 const express = require('express')
 var type = require('component-type')
 
+// check type of passed JSON, confirm whether the type check can be tricked
 function runComponent(payload)
 {
-    console.log(payload);
-
-    var obj = payload;
-    //console.log(Object.prototype.toString.call(payload));
-    //console.log(type(obj.Symbol.toStringTag));
-    console.log(obj['toStringTag']);
-
-    console.log("list all fields");
-    for(var propertyName in obj) {
-   // propertyName is what you want
-   // you can get the value like this: myObject[propertyName]
-        console.log("property name: " + propertyName + " : " + obj[propertyName]);
-    }
-    var objSymbols = Object.getOwnPropertySymbols(obj);
-    console.log(objSymbols);
-    
-    console.log(obj["[Symbol.toStringTag]"]);
-
-    console.log("check my testPollution class");
-    let polluted = new testPollution();
-     for(var propertyName in polluted) {
-    // propertyName is what you want
-    // you can get the value like this: myObject[propertyName]
-        console.log("property name: " + propertyName + " : " + testPollution[propertyName]);
-    }
-    console.log("end of properties");
-    console.log(JSON.stringify(polluted));
-    //console.log(type(polluted));
-    var objectSymbols = Object.getOwnPropertySymbols(polluted);
-    //console.log(objectSymbols);
-
-    console.log(valOf(polluted));
-
-     return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       resolve(type(obj))
   })
 
 }
 
-
+// Demo to 
 function demo1()
 {
   // validated how  component-type works
@@ -77,13 +45,6 @@ function demo1()
 
 }
 
-function valOf(obj)
-{
-    obj = obj.valueOf
-    ? obj.valueOf()
-    : Object.prototype.valueOf.apply(obj);
-    return typeof obj;
-}
 
 class testPollution
 {        
@@ -128,6 +89,15 @@ function demo2()
     console.log(Object.prototype.toString.call(new Date())); // [object prototype polluted]
 
     console.log(Object.prototype.toString(Object.prototype.toString()));
+}
+
+/// debugging aid function for testing 
+function demoValOf(obj)
+{
+    obj = obj.valueOf
+    ? obj.valueOf()
+    : Object.prototype.valueOf.apply(obj);
+    return typeof obj;
 }
 
 module.exports = {
