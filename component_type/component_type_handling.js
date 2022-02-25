@@ -13,18 +13,21 @@ function runComponent(payload)
 // Demo to 
 function demo1()
 {
-  // validated how  component-type works
-  var obj = new Date;
+  // validated how component-type works
+  var dateObj = new Date;
   var toString = Object.prototype.toString;
-  console.log(type(obj));
 
-  var o = {}; // empty Object
+  var returnObj = {}; // empty Object
   var key = 'Malicious';
-  o[key] = new Date(); // empty Array, which you can push() values into
+  returnObj["dateObj"] = dateObj; // empty Array, which you can push() values into
   //obj2 = 'String.prototype[Symbol.toStringTag] = \'prototype polluted\';';
-  obj3 = 'new Date(); Date.prototype';
 
   
+  returnObj["type(dateObj)"]= type(dateObj);
+  returnObj["Manipulate the dateObj"] = "obj[Symbol.toStringTag] = 'Array';";
+  dateObj[Symbol.toStringTag] = 'Array';
+  returnObj["new type(dateObj)"] = type(dateObj)
+
 
   let polluted = new testPollution();
   console.log(Object.prototype.toString.call(polluted));
@@ -39,9 +42,12 @@ function demo1()
   // experimenting
   var malicious = "class testPollution { get [Symbol.toStringTag]() { return \"Array\"; } } ";
 
+  //var valOfPolStr = type(valOfPol);
+  console.log(returnObj);
+
   return new Promise((resolve, reject) => {
-      resolve(type(valueOfPol))
-  })
+      resolve(returnObj)
+  });
 
 }
 
@@ -92,15 +98,24 @@ function demo2()
 }
 
 /// debugging aid function for testing 
-function demoValOf(obj)
+function demoValOfFix(obj)
 {
-    obj = obj.valueOf
-    ? obj.valueOf()
-    : Object.prototype.valueOf.apply(obj);
-    return typeof obj;
+    if (typeof obj.valueOf === 'function')
+    {
+        obj = obj.valueOf
+        ? obj.valueOf()
+        : Object.prototype.valueOf.apply(obj);
+        return typeof obj;
+    }
+    else
+    {
+        return "Mangled valueOf property";
+    }
+
 }
 
 module.exports = {
     demo1,
-    runComponent
+    runComponent,
+    demoValOf
 }

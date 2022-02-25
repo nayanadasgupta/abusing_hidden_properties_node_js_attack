@@ -49,7 +49,7 @@ function exampleJPV()
 	return ("Validation bypassed: " + jpv.validate(user_input, pattern));
 	*/
 
-	
+	/*
 	const input = {
 		aMap: {
 		  badcode: "problematic input.", 
@@ -60,18 +60,19 @@ function exampleJPV()
 	const schema = {
 	  aMap: new Map()
 	};
+	*/
 	
 
-	/*
+	
 	const input= {
 		key7: {"a":1},
-		"hasOwnProperty": (v)=>{return false;}
+		"hasOwnProperty": ()=>{return false;}
 	}
 	
 	var schema = {
 		key7: []
 	};
-	*/
+	
 
 
 	// jpv.validate(input, schema) should return false, but, as of 2.2.1, returns true
@@ -92,11 +93,11 @@ function constructorOverrideUpdated(input)
 }
 
 // Not working at the moment
-function hasOwnPropertyOverride(input)
+function hasOwnPropertyOverride()
 {
 	var input= {
 		key7: {"a":1},
-		"hasOwnProperty": (v)=>{return false;}
+		"hasOwnProperty": ()=>{return false;}
 	}
 	var schema = {
 		key7: []

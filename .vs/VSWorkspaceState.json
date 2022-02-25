@@ -1,11 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\bson-objectid",
     "\\component_type",
     "\\data",
     "\\jpv",
     "\\models",
     "\\routes"
   ],
+  "SelectedNode": "\\bson-objectid\\attack.js",
   "PreviewInSolutionExplorer": false
 }
