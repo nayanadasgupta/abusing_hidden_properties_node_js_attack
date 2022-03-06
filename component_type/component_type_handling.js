@@ -109,7 +109,7 @@ function demoValOfFix(obj)
     }
     else
     {
-        return "Mangled valueOf property";
+        return "Mangled";
     }
 
 }
@@ -117,5 +117,5 @@ function demoValOfFix(obj)
 module.exports = {
     demo1,
     runComponent,
-    demoValOf
+    demoValOfFix
 }

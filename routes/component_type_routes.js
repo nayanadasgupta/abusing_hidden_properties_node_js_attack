@@ -13,8 +13,8 @@ router.post('/', async (req, res) => {
     
 })
 
-router.post('/valof', async (req, res) => {
-    typeString =  await component_type.demoValOf(req.body);
+router.post('/valoffix', async (req, res) => {
+    typeString =  await component_type.demoValOfFix(req.body);
     
     res.json(typeString);
     
@@ -25,10 +25,4 @@ router.get('/', async (req, res) => {
     result = await component_type.demo1()
     console.log(result);
     res.json(result);
-    //payloads = await payload_model.getApplicationPayload('component_type');
-    //console.log("running type checker");
-    //typeString =  await component_type.runComponent(payloads);
-    //res.json(typeString);
-    
-    
 })
