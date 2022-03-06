@@ -109,7 +109,7 @@ function demoValOfFix(obj)
     }
     else
     {
-        return "Mangled valueOf property";
+        return "Mangled";
     }
 
 }
