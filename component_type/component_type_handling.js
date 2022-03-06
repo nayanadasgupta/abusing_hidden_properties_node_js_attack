@@ -117,5 +117,5 @@ function demoValOfFix(obj)
 module.exports = {
     demo1,
     runComponent,
-    demoValOf
+    demoValOfFix
 }
