@@ -21,7 +21,7 @@
   "dependencies": {
     "express": "^4.17.2",
     "generator-eslint": "^3.0.1",
-    "jpv": "^2.0.1",
+    "jpv": "^2.2.1",
     "uuid": "^8.3.2",
     "yo": "^4.3.0"
   },
