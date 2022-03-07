@@ -29,7 +29,7 @@ console.log(ObjectID.isValid(ObjectID(payload)));
 }
 
 function jsonDemo(input) {
-    return (ObjectID(input).id);
+    return ("bson-object ID says the id should be " + ObjectID(input).id);
 }
 
 module.exports =
