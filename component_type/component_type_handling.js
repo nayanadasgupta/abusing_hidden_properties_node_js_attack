@@ -5,7 +5,7 @@ var type = require('component-type')
 function runComponent(payload)
 {
     return new Promise((resolve, reject) => {
-      resolve(type(obj))
+      resolve(type(payload))
   })
 
 }
