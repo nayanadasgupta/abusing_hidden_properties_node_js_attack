@@ -2,13 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\bson-objectid",
+    "\\class-validator",
     "\\clone-deep",
     "\\component_type",
     "\\data",
     "\\jpv",
     "\\kind_of",
+    "\\models",
     "\\routes"
   ],
-  "SelectedNode": "\\kind_of\\attack.js",
+  "SelectedNode": "\\class-validator\\class-validator_handling.js",
   "PreviewInSolutionExplorer": false
 }

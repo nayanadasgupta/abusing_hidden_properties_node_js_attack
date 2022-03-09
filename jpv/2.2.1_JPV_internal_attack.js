@@ -17,7 +17,7 @@ function exampleJPV() {
 	const input = {
 		aMap: {
 		  badcode: "problematic input.", 
-		  constructor: new Map().constructor
+		  constructor: new Map.constructor
 		}
 	};
 
