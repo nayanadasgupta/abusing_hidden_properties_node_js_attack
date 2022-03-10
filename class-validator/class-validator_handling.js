@@ -1,9 +1,11 @@
 var mysql = require('mysql2');
 var classValidator = require('class-validator');
+
 //var mysql = require('mysql2/promise')
 
 function bypassedValidation(emailInput, passwordInput, connection) {
     const sqlquery1 = `SELECT * FROM login WHERE email = ${emailInput} AND password = ${passwordInput}`;
+    console.log(sqlquery1);
     return new Promise(function (resolve, reject) {
         connection.query(sqlquery1, function (error, rows) {
             if (error) {
@@ -17,22 +19,15 @@ function bypassedValidation(emailInput, passwordInput, connection) {
     });
 
 }
+
 class intendedSchema {
     email;
-    password
+    password;
 }
-
-let param = {
-    email: ' " OR 1=1--',
-    password: ' " OR 1=1--',
-    constructor: false
-};
-
 
 
 function jsonHandle(emailInput)
 {
-    console.log("into the json");
     let requirements = {
         host: 'localhost',
         user: 'root',
@@ -41,7 +36,7 @@ function jsonHandle(emailInput)
     };
     var connection = mysql.createConnection(requirements);
 
-    let test1Param = Object.assign(intendedSchema, param);
+    let test1Param = Object.assign(intendedSchema, emailInput);
     console.log("This is the merged schema:")
     console.log(test1Param);
 
@@ -54,7 +49,11 @@ function jsonHandle(emailInput)
             } else {
                 console.log('valid email and password, user successfully validated. Relevant Database Information:');
                 bypassedValidation(test1Param.email, test1Param.password, connection).then((results) => {
-                    resolve(results);  
+
+                    if (results.length == 0) {
+                        resolve("No user found");
+                    }
+                    resolve(results);
                 })
 
             }
