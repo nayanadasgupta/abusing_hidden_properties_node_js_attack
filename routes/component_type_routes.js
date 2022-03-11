@@ -26,3 +26,8 @@ router.get('/', async (req, res) => {
     console.log(result);
     res.json(result);
 })
+
+router.post('/supplychain', async (req, res) => {
+    result = await component_type.demoSupplyChain(req.body);
+    res.json(result);
+})

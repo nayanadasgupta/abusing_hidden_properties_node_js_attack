@@ -26,19 +26,39 @@ function exampleJPV() {
 	console.log("jpv.validate(input, schema) = " + jpv.validate(input, schema));
 	console.log(input.constructor === schema.constructor);
 
-	for (const property in input.aMap) {
-		console.log(property);
-		console.log("i am here");
-		if (Object.prototype.hasOwnProperty.call(input.aMap, String(property))) {
-			console.log("now here");
-			console.log(property);
-			
-			console.log(Object.prototype.hasOwnProperty.call(input.aMap, "constructor"));
-			console.log(Object.prototype.hasOwnProperty.call(schema.aMap, "constructor"))
+	// To fix this, we could check that the constructor is not inherited 
 
-			if (!Object.prototype.hasOwnProperty.call(schema, String(property))) {
-				console.log("checked schema");
-            }
+	console.log("This can be quickly fixed by checking if the object has its own constructor property, rather than being inherited");
+
+	console.log("if (Object.prototype.hasOwnProperty.call(input.aMap, \"constructor\")) { return False } ");
+	if (Object.prototype.hasOwnProperty.call(input.aMap, "constructor")) {
+		console.log("Return False here");
+	}
+
+	console.log("An object that inherits the constructor is fine, as we demonstrate against the schema");
+	console.log("if (!Object.prototype.hasOwnProperty.call(schema.aMap, \"constructor\")) { return False } ");
+	if (!Object.prototype.hasOwnProperty.call(schema.aMap, "constructor")) {
+		console.log("Return True here");
+	}
+
+
+	//for (const property in input.aMap) {
+	//	console.log(property);
+		
+	//	if (property == "constructor") {
+	//		console.log("found constructor");
+ //       }
+	//	console.log((Object.prototype.hasOwnProperty.call(input.aMap, String(property))));
+	//	if (Object.prototype.hasOwnProperty.call(input.aMap, String(property))) {
+	//		console.log("now here");
+	//		console.log(property);
+			
+	//		console.log(Object.prototype.hasOwnProperty.call(input.aMap, "constructor"));
+	//		console.log(Object.prototype.hasOwnProperty.call(schema.aMap, "constructor"))
+
+	//		if (!Object.prototype.hasOwnProperty.call(schema, String(property))) {
+	//			console.log("checked schema");
+ //           }
 			//if ((typeof input[property] === 'object') &&
 			//	(typeof schema[property] === 'object') &&
 			//	(Object.keys(schema[property]).length !== 0)) {

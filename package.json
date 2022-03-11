@@ -1,8 +1,8 @@
 {
   "name": "abusing_hidden_properties_node_js_attack",
   "version": "1.0.0",
-    "description": "Implementation of \"Abusing Hidden Properties to Attack the Node.js Ecosystem\"",
-    "main": "index.js",
+  "description": "Implementation of \"Abusing Hidden Properties to Attack the Node.js Ecosystem\"",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "node_modules/.bin/nodemon -e js",

@@ -19,14 +19,6 @@ router.post('/Array', async (req, res) => {
     
 })
 
-router.post('/Constructor', async (req, res) => {
-
-    returnVal = await jpv_handle.constructorOverrideUpdated(req.body);
-    res.json(returnVal);
-    
-})
-
-
 router.get('/', async(req, res) => {
     returnVal = await jpv_handle.exampleJPV();
     res.json(returnVal);
