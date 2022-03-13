@@ -1,6 +1,14 @@
 const ObjectID = require("bson-objectid");
 
-// Working Example
+// Receives a JSON object and returns the bson-object ID
+function jsonDemo(input) {
+    console.log(input);
+    console.log(ObjectID(input));
+    console.log(ObjectID(input).id);
+    return ("bson-object ID says the id should be " + ObjectID(input).id);
+}
+
+// Internal testing 
 function workingDemo() {
     console.log(ObjectID("54495ad94c934721ede76d90"));
     console.log(ObjectID.isValid(ObjectID("54495ad94c934721ede76d90")));
@@ -28,12 +36,6 @@ console.log(ObjectID.isValid(ObjectID(payload)));
 
 }
 
-function jsonDemo(input) {
-    console.log(input);
-    console.log(ObjectID(input));
-    console.log(ObjectID(input).id);
-    return ("bson-object ID says the id should be " + ObjectID(input).id);
-}
 
 module.exports =
 {

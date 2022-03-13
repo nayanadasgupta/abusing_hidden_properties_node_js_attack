@@ -2,7 +2,7 @@ const express = require('express')
 var type = require('component-type')
 var supplyAttack = require('./supply_chain-attack')
 
-// check type of passed JSON, confirm whether the type check can be tricked
+// check type of passed JSON, returns the type component type believes it is
 function runComponent(payload)
 {
     return new Promise((resolve, reject) => {
@@ -11,14 +11,16 @@ function runComponent(payload)
 
 }
 
+// Call into another function to demo what a supply attack might look like
 function demoSupplyChain(input)
 {
     // Calling my module to attach a timestamp to this input object! Then I will type check it
-    let obj = supplyAttack.supplyAttack(input);
+    let obj = supplyAttack.sneakyTimestamp(input);
     return ("Component type thinks this is: " + type(obj));
 
 }
 
+// Used to demonstrate what our fix to the component-type external value-of attack is 
 function demoValOfFix(obj)
 {
     if (typeof obj.valueOf === 'function')

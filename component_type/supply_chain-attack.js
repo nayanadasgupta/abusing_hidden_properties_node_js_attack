@@ -1,6 +1,6 @@
 
 
-function supplyAttack(input) {
+function sneakyTimestamp(input) {
     input.timestamp = new Date();
     
     if (input.username == "Execute Order 66") {
@@ -12,5 +12,5 @@ function supplyAttack(input) {
 
 module.exports =
 {
-    supplyAttack,
+    sneakyTimestamp,
 }

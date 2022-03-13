@@ -1,29 +1,10 @@
 var type = require('component-type')
 
-class testPollution {
-    constructor() {
-        Object.defineProperties(this, {
-            [Symbol.toStringTag]: {
-                value: "Array",
-                writable: true
-            }
-        });
-        this.valueOf = function valueOf() { return true; };
-    }
-}
-
-
-class vals {
-    constructor() { }
-
-}
-
-
 demo1()
 
-function demo1()
-{
-  // validated how component-type works
+// Do a long demo of how component-type can be tricked by internal attackers
+function demo1() {
+    // validated how component-type works
     var check = new testPollution();
     var dateObj = new Date;
     console.log("This is the component type result on a date object")
@@ -33,7 +14,7 @@ function demo1()
     console.log("   obj[Symbol.toStringTag] = 'Array';");
     dateObj[Symbol.toStringTag] = 'Array';
     console.log("component type will now return array for the date object!");
-    console.log("   "+ type(dateObj));
+    console.log("   " + type(dateObj));
 
     console.log("\n\n");
     console.log("This is a custom made polluted object, we overode its toStringTag in the constructor");
@@ -52,5 +33,27 @@ function demo1()
 
     console.log("\n\n");
 }
+
+// Example of how a constructor for an object can set its toStringTag to a different value
+class testPollution {
+    constructor() {
+        Object.defineProperties(this, {
+            [Symbol.toStringTag]: {
+                value: "Array",
+                writable: true
+            }
+        });
+        this.valueOf = function valueOf() { return true; };
+    }
+}
+
+// empty class used to show the value of attack by an internal or supply chain adversary
+class vals {
+    constructor() { }
+
+}
+
+
+
 
 
