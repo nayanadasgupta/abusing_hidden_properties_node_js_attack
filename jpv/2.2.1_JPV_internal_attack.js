@@ -1,4 +1,4 @@
-const jpv = require('jpv')
+import { validate } from 'jpv';
 exampleJPV()
 
 // Demo for the constructor bypass on version 2.2.1 
@@ -23,7 +23,7 @@ function exampleJPV() {
 	};
 	
 	// jpv.validate(input, schema) should return false, but, as of 2.2.1, returns true
-	console.log("jpv.validate(input, schema) = " + jpv.validate(input, schema));
+	console.log("jpv.validate(input, schema) = " + validate(input, schema));
 	console.log(input.constructor === schema.constructor);
 
 	// To fix this, we could check that the constructor is not inherited 

@@ -1,5 +1,5 @@
-const express = require('express')
-const jpv = require('jpv')
+import pkg from 'jpv';
+const { validate } = pkg;
 
 
 // Bypass check on 2.0.1 for map validation
@@ -10,7 +10,7 @@ function checkJPVMapOrig(input)
 		should_be_map: new Map()
 	}
 
-	return ("Validation bypassed: " + jpv.validate(input, mapPattern));
+	return ("Validation bypassed: " + validate(input, mapPattern));
 }
 
 // Bypass check on 2.0.1 for array validation
@@ -20,7 +20,7 @@ function checkJPVArrayOrig(input)
 		should_be_array: []
 	};
 
-	return ("Validation bypassed: " + jpv.validate(input, arrayPattern));
+	return ("Validation bypassed: " + validate(input, arrayPattern));
 }
 
 
@@ -42,7 +42,7 @@ function traverse(o,func) {
     }
 }
 
-module.exports = {
+export default {
    checkJPVMapOrig,
    checkJPVArrayOrig,
 }

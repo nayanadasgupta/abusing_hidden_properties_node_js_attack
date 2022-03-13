@@ -1,25 +1,24 @@
-const express = require('express')
-const router = express.Router()
-const jpv_handle = require('../jpv/jpv_handling')
-const payload_model = require('../models/payload.model')
+import { Router } from 'express'
+const jpv_router = Router()
+import jpv_handle from '../jpv/jpv_handling.js'
 
-module.exports = router
+export default jpv_router
 
-router.post('/Map', async (req, res) => {
+jpv_router.post('/Map', async (req, res) => {
 
-    returnVal = await jpv_handle.checkJPVMapOrig(req.body);
+    let returnVal = await jpv_handle.checkJPVMapOrig(req.body);
     res.json(returnVal);
     
 })
 
-router.post('/Array', async (req, res) => {
+jpv_router.post('/Array', async (req, res) => {
 
-    returnVal = await jpv_handle.checkJPVArrayOrig(req.body);
+    let returnVal = await jpv_handle.checkJPVArrayOrig(req.body);
     res.json(returnVal);
     
 })
 
-router.get('/', async(req, res) => {
-    returnVal = await jpv_handle.exampleJPV();
+jpv_router.get('/', async(req, res) => {
+    let returnVal = await jpv_handle.exampleJPV();
     res.json(returnVal);
 })

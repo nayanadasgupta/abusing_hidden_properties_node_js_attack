@@ -1,13 +1,13 @@
-const express = require('express')
-const router = express.Router()
-const bson_handle = require('../bson-objectid/attack')
+import { Router } from 'express'
+const bson_router = Router()
+import bson_handle from '../bson-objectid/attack.js'
 
 
-module.exports = router
+export default bson_router
 
-router.post('/post', async (req, res) => {
+bson_router.post('/post', async (req, res) => {
 
-    returnVal = await bson_handle.jsonDemo(req.body);
+    let returnVal = await bson_handle.jsonDemo(req.body);
     res.json(returnVal);
 
 })

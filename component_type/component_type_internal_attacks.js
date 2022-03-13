@@ -1,4 +1,4 @@
-var type = require('component-type')
+import type from 'component-type';
 
 demo1()
 

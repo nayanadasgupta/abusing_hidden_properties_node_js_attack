@@ -1,5 +1,6 @@
-var mysql = require('mysql2');
-var classValidator = require('class-validator');
+import { createConnection } from 'mysql2';
+import { validate } from 'class-validator';
+import { UserValidationSchema } from "./schema.js";
 
 //var mysql = require('mysql2/promise')
 
@@ -34,15 +35,18 @@ function jsonHandle(emailInput)
         password: 'compsec2',
         database: 'sqldatabase'
     };
-    var connection = mysql.createConnection(requirements);
+    var connection = createConnection(requirements);
 
-    let test1Param = Object.assign(intendedSchema, emailInput);
+    let test1Param = Object.assign(UserValidationSchema, emailInput);
     console.log("This is the merged schema:")
     console.log(test1Param);
 
 
+
+
+
     return new Promise(function (resolve, reject) {
-        classValidator.validate(test1Param).then((errors) => {
+        validate("myUserSchema", test1Param).then((errors) => {
             if (errors.length > 0) {
                 console.log('invalid email and or password, unable to validate user', errors);
                 resolve("Class validator failed to validate user ");
@@ -55,13 +59,12 @@ function jsonHandle(emailInput)
                     }
                     resolve(results);
                 })
-
             }
         });
     });
 
 }
 
-module.exports = {
+export default {
     jsonHandle
 }

@@ -1,41 +1,42 @@
 {
-  "name": "abusing_hidden_properties_node_js_attack",
-  "version": "1.0.0",
-  "description": "Implementation of \"Abusing Hidden Properties to Attack the Node.js Ecosystem\"",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "dev": "node_modules/.bin/nodemon -e js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nayanadasgupta/abusing_hidden_properties_node_js_attack.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nayanadasgupta/abusing_hidden_properties_node_js_attack/issues"
-  },
-  "homepage": "https://github.com/nayanadasgupta/abusing_hidden_properties_node_js_attack#readme",
-  "dependencies": {
-    "class-validator": "^0.13.2",
-    "express": "^4.17.2",
-    "generator-eslint": "^3.0.1",
-    "jpv": "^2.0.1",
-    "mysql2": "^2.3.3",
-    "routing-controllers": "^0.7.7",
-    "uuid": "^8.3.2",
-    "yo": "^4.3.0"
-  },
-  "devDependencies": {
-    "bson-objectid": "1.3",
-    "clone-deep": "^4.0.1",
-    "component-type": "^1.2.1",
-    "kind-of": "^6.0.2",
-    "mongoose": "^5.8.1",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.15",
-    "schema-inspector": "^1.6.8"
-  }
+    "name": "abusing_hidden_properties_node_js_attack",
+    "version": "1.0.0",
+    "description": "Implementation of \"Abusing Hidden Properties to Attack the Node.js Ecosystem\"",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "node_modules/.bin/nodemon -e js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nayanadasgupta/abusing_hidden_properties_node_js_attack.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/nayanadasgupta/abusing_hidden_properties_node_js_attack/issues"
+    },
+    "homepage": "https://github.com/nayanadasgupta/abusing_hidden_properties_node_js_attack#readme",
+    "dependencies": {
+        "class-validator": "^0.9.1",
+        "express": "^4.17.2",
+        "generator-eslint": "^3.0.1",
+        "jpv": "^2.0.1",
+        "mysql2": "^2.3.3",
+        "npm": "^8.5.4",
+        "uuid": "^8.3.2",
+        "yo": "^4.3.0"
+    },
+    "devDependencies": {
+        "bson-objectid": "1.3",
+        "clone-deep": "^4.0.1",
+        "component-type": "^1.2.1",
+        "kind-of": "^6.0.2",
+        "mongoose": "^5.8.1",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.15",
+        "schema-inspector": "^1.6.8"
+    }
 }

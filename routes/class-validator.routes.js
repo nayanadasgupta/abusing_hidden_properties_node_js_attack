@@ -1,10 +1,10 @@
-const express = require('express')
-const router = express.Router()
-const class_validator = require('../class-validator/class-validator_handling')
+import { Router } from 'express'
+const class_val_router = Router()
+import class_validator from '../class-validator/class-validator_handling.js'
 
-module.exports = router
+export default class_val_router
 
-router.post('/', async (req, res) => {
+class_val_router.post('/', async (req, res) => {
     let prom = class_validator.jsonHandle(req.body);
     let resolved = Promise.resolve(prom)
     resolved.then(function (values) {

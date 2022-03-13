@@ -1,13 +1,13 @@
-const express = require('express')
-const router = express.Router()
-const kindof_handle = require('../kind_of/attack')
+import { Router } from 'express'
+const kind_of_router = Router()
+import kindof_handle from '../kind_of/attack.js'
 
 
-module.exports = router
+export default kind_of_router
 
-router.post('/', async (req, res) => {
+kind_of_router.post('/', async (req, res) => {
 
-    returnVal = await kindof_handle.jsonDemo(req.body);
+    let returnVal = await kindof_handle.jsonDemo(req.body);
     res.json(returnVal);
 
 })

@@ -1,6 +1,5 @@
 
-
-function sneakyTimestamp(input) {
+export function sneakyTimestamp(input) {
     input.timestamp = new Date();
     
     if (input.username == "Execute Order 66") {
@@ -8,9 +7,4 @@ function sneakyTimestamp(input) {
         input.length = 99;
 	}
     return input;
-}
-
-module.exports =
-{
-    sneakyTimestamp,
 }

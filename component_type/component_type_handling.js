@@ -1,6 +1,6 @@
-const express = require('express')
-var type = require('component-type')
-var supplyAttack = require('./supply_chain-attack')
+import express from 'express'
+import type from 'component-type'
+import { sneakyTimestamp } from './supply_chain-attack.js'
 
 // check type of passed JSON, returns the type component type believes it is
 function runComponent(payload)
@@ -15,7 +15,7 @@ function runComponent(payload)
 function demoSupplyChain(input)
 {
     // Calling my module to attach a timestamp to this input object! Then I will type check it
-    let obj = supplyAttack.sneakyTimestamp(input);
+    let obj = sneakyTimestamp(input);
     return ("Component type thinks this is: " + type(obj));
 
 }
@@ -37,7 +37,7 @@ function demoValOfFix(obj)
 
 }
 
-module.exports = {
+export default {
     runComponent,
     demoValOfFix,
     demoSupplyChain

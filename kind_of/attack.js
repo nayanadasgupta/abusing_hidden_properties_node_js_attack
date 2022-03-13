@@ -1,4 +1,4 @@
-const kindOf = require('kind-of');
+import kindOf from 'kind-of';
 
 // Receives JSON input and returns what kindof believes it is
 function jsonDemo(input) {
@@ -21,7 +21,7 @@ function demo1() {
 }
 
 
-module.exports =
+export default
 {
     jsonDemo
 }
