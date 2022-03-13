@@ -40,31 +40,4 @@ function exampleJPV() {
 	if (!Object.prototype.hasOwnProperty.call(schema.aMap, "constructor")) {
 		console.log("Return True here");
 	}
-
-
-	//for (const property in input.aMap) {
-	//	console.log(property);
-		
-	//	if (property == "constructor") {
-	//		console.log("found constructor");
- //       }
-	//	console.log((Object.prototype.hasOwnProperty.call(input.aMap, String(property))));
-	//	if (Object.prototype.hasOwnProperty.call(input.aMap, String(property))) {
-	//		console.log("now here");
-	//		console.log(property);
-			
-	//		console.log(Object.prototype.hasOwnProperty.call(input.aMap, "constructor"));
-	//		console.log(Object.prototype.hasOwnProperty.call(schema.aMap, "constructor"))
-
-	//		if (!Object.prototype.hasOwnProperty.call(schema, String(property))) {
-	//			console.log("checked schema");
- //           }
-			//if ((typeof input[property] === 'object') &&
-			//	(typeof schema[property] === 'object') &&
-			//	(Object.keys(schema[property]).length !== 0)) {
-			//	return (valid = iterate(value[property], pattern[property], valid, cb, options));
-			//}
-		}
-	}
-
 }

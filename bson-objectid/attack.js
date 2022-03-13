@@ -29,6 +29,9 @@ console.log(ObjectID.isValid(ObjectID(payload)));
 }
 
 function jsonDemo(input) {
+    console.log(input);
+    console.log(ObjectID(input));
+    console.log(ObjectID(input).id);
     return ("bson-object ID says the id should be " + ObjectID(input).id);
 }
 

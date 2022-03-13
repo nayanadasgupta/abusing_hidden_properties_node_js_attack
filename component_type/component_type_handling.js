@@ -19,7 +19,6 @@ function demoSupplyChain(input)
 
 }
 
-/// debugging aid function for testing 
 function demoValOfFix(obj)
 {
     if (typeof obj.valueOf === 'function')
