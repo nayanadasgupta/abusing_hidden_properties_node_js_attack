@@ -3,14 +3,11 @@
     "",
     "\\bson-objectid",
     "\\class-validator",
-    "\\clone-deep",
     "\\component_type",
-    "\\data",
     "\\jpv",
     "\\kind_of",
-    "\\models",
     "\\routes"
   ],
-  "SelectedNode": "\\component_type\\component_type_internal_attacks.js",
+  "SelectedNode": "\\class-validator\\schema.js",
   "PreviewInSolutionExplorer": false
 }

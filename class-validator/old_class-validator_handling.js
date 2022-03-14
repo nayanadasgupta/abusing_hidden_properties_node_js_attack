@@ -1,11 +1,10 @@
-// import { UserValidationSchema } from "./schema.js";
-// registerSchema(UserValidationSchema);
-import { UserSchema } from "./schema.js";
-import { validate } from "class-validator";
 import { createConnection } from 'mysql2';
+import { validate } from 'class-validator';
+import { UserValidationSchema } from "./schema.js";
 
-function login(emailInput, passwordInput, connection)
-{
+//var mysql = require('mysql2/promise')
+
+function login(emailInput, passwordInput, connection) {
     const sqlquery1 = `SELECT * FROM login WHERE email = ${emailInput} AND password = ${passwordInput}`;
     console.log(sqlquery1);
     return new Promise(function (resolve, reject) {
@@ -22,8 +21,14 @@ function login(emailInput, passwordInput, connection)
 
 }
 
+class intendedSchema {
+    email;
+    password;
+}
 
-function jsonHandle(emailInput) {
+
+function jsonHandle(emailInput)
+{
     let requirements = {
         host: 'localhost',
         user: 'root',
@@ -32,12 +37,16 @@ function jsonHandle(emailInput) {
     };
     var connection = createConnection(requirements);
 
-    let test1Param = Object.assign(UserSchema, emailInput);
+    let test1Param = Object.assign(UserValidationSchema, emailInput);
     console.log("This is the merged schema:")
     console.log(test1Param);
 
+
+
+
+
     return new Promise(function (resolve, reject) {
-        validate(test1Param).then((errors) => {
+        validate("myUserSchema", test1Param).then((errors) => {
             if (errors.length > 0) {
                 console.log('invalid email and or password, unable to validate user', errors);
                 resolve("Class validator failed to validate user ");
