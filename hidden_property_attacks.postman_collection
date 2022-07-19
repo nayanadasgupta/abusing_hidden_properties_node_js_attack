@@ -1,0 +1,538 @@
+{
+	"info": {
+		"_postman_id": "91128546-5536-41d4-ac53-1fa3fa51b0fc",
+		"name": "comp_sec2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19468998"
+	},
+	"item": [
+		{
+			"name": "Component-Type",
+			"item": [
+				{
+					"name": "Component-type_nodeType",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"John\",\r\n    \"password\": \"Doe\",\r\n    \"nodeType\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/component_type/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"component_type",
+								""
+							],
+							"query": [
+								{
+									"key": "application_id",
+									"value": "component_type",
+									"disabled": true
+								},
+								{
+									"key": "payload",
+									"value": "bad2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Component-type_isBuffer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"John\",\r\n    \"password\": \"Doe\",\r\n    \"_isBuffer\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/component_type/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"component_type",
+								""
+							],
+							"query": [
+								{
+									"key": "application_id",
+									"value": "component_type",
+									"disabled": true
+								},
+								{
+									"key": "payload",
+									"value": "bad2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Component-type_Supplychain_safe",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"John\",\r\n    \"password\": \"Doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/component_type/supplychain",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"component_type",
+								"supplychain"
+							],
+							"query": [
+								{
+									"key": "application_id",
+									"value": "component_type",
+									"disabled": true
+								},
+								{
+									"key": "payload",
+									"value": "bad2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Component-type_Supplychain_Malicious",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Execute Order 66\",\r\n    \"password\": \"Doe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/component_type/supplychain",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"component_type",
+								"supplychain"
+							],
+							"query": [
+								{
+									"key": "application_id",
+									"value": "component_type",
+									"disabled": true
+								},
+								{
+									"key": "payload",
+									"value": "bad2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Component-type_ValueOf",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"John\",\r\n    \"password\": \"Doe\",\r\n    \"valueOf\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/component_type/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"component_type",
+								""
+							],
+							"query": [
+								{
+									"key": "application_id",
+									"value": "component_type",
+									"disabled": true
+								},
+								{
+									"key": "payload",
+									"value": "bad2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Component-type_ValueOf Demo Fix",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"application_id\": \"component_type\",\r\n    \"username\": \"John\",\r\n    \"password\": \"Doe\",\r\n    \"valueOf\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/component_type/valoffix",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"component_type",
+								"valoffix"
+							],
+							"query": [
+								{
+									"key": "application_id",
+									"value": "component_type",
+									"disabled": true
+								},
+								{
+									"key": "payload",
+									"value": "bad2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JPV",
+			"item": [
+				{
+					"name": "JPV_POST_Array",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"should_be_array\": {\r\n        \"a\": \"1\",\r\n        \"constructor\": {\r\n            \"name\": \"Array\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/jpv/Array",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"jpv",
+								"Array"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "JPV_POST_Map",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"should_be_map\": {\r\n        \"malicious_input\": \"1\",\r\n        \"constructor\": {\r\n            \"name\": \"Map\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/jpv/Map",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"jpv",
+								"Map"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BSON-objectid",
+			"item": [
+				{
+					"name": "BSON_Malicious_ID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"ADMIN_ID\",\r\n    \"hello\": \"world\",\r\n    \"_bsontype\": \"ObjectID\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/bson/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"bson",
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kindof",
+			"item": [
+				{
+					"name": "Kindof-validation-bypass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"54495ad94c934721ede76d90\",\r\n    \"username\": \"bob\",\r\n    \"greeting\": \"can we fix it?\",\r\n    \"password\": \"yes we can!\",\r\n    \"constructor\":{\"name\":\"Set\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/kindof/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"kindof",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "class-validator",
+			"item": [
+				{
+					"name": "Class-validator-normal-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"User2@email.co.uk\",\r\n    \"password\": \"Pass2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/class-validator/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"class-validator",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Class-validator-incorrect-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"User2@email.co.uk\",\r\n    \"password\": \"Pass3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/class-validator/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"class-validator",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Class-validator-mangled",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"User2@email.co.uk\",\r\n    \"passwrd\": \"Paass2\",\r\n    \"incorrectField\": \"i shouldn't be here\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/class-validator/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"class-validator",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Class-validator-malicious",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"' OR 1=1--\",\r\n    \"password\": \" ' OR 1=1--\",\r\n    \"constructor\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/class-validator/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"class-validator",
+								""
+							],
+							"query": [
+								{
+									"key": "application_id",
+									"value": "component_type",
+									"disabled": true
+								},
+								{
+									"key": "payload",
+									"value": "bad2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
