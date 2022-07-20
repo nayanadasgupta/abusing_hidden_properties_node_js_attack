@@ -62,3 +62,8 @@ Implementation of Abusing Hidden Properties to Attack the Node.js Ecosystem ([Xi
         b)	Run `npm install jpv@2.2.1` to update JPV to the correct version for this internal attack. Then run the internal JPV attack and observe the console.log output to see how an internal attacker can exploit the vulnerability by setting a constructor manually. 
         `node jpv/2.2.1_JPV_internal_attack.js`
 
+## Try Linter
+
+- The linter code exists within `linter/lib/rules/func-check-before-constructor.js`.
+- There are unit tests to ensure correct checking within `linter/tests/lib/rules/func-check-before-constructor.js`. You can run the unit tests to confirm there are no errors with o nodetests/lib/rules/func-check-before-constructor.js.
+- You may uncomment a test on line 12 and run the tets again to see the response when ESLinter catches problematic code.
