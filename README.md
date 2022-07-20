@@ -1,7 +1,7 @@
 
 # Abusing Hidden Properties to Attack the Node.js Ecosystem
 
-Implementation of Abusing Hidden Properties to Attack the Node.js Ecosystem ([Xiao et. al. 2021](https://www.usenix.org/conference/usenixsecurity21/presentation/xiao)), with examples of vulnerable code and how they can be exploitated. This repository also includes linter code that outlines how some hidden property vulnerabilities can be detected. 
+Implementation of Abusing Hidden Properties to Attack the Node.js Ecosystem ([Xiao et. al. 2021](https://www.usenix.org/conference/usenixsecurity21/presentation/xiao)), with examples of vulnerable code and how they can be exploited. This repository also includes linter code that outlines how some hidden property vulnerabilities can be detected. 
 
 ## Create a MySQL Database for Testing
 
